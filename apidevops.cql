@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS apidevops.user (
   "email": "dinesh@apidevops.com",
   "isactive": "true"
 }
+     
         
 nohup target/universal/stage/bin/apidevops -Dplay.http.secret.key=pazani -Dhttp.port=80 &
         
