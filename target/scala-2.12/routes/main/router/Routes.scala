@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/play-scala-streaming-example-2.6.x/conf/routes
-// @DATE:Sun Oct 08 20:03:27 IST 2017
+// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/conf/routes
+// @DATE:Sun Oct 15 18:37:42 IST 2017
 
 package router
 
@@ -20,7 +20,7 @@ class Routes(
   ScalaCometController_3: controllers.ScalaCometController,
   // @LINE:12
   ScalaEventSourceController_2: controllers.ScalaEventSourceController,
-  // @LINE:20
+  // @LINE:22
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -33,7 +33,7 @@ class Routes(
     ScalaCometController_3: controllers.ScalaCometController,
     // @LINE:12
     ScalaEventSourceController_2: controllers.ScalaEventSourceController,
-    // @LINE:20
+    // @LINE:22
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_0, ScalaCometController_3, ScalaEventSourceController_2, Assets_1, "/")
 
@@ -54,6 +54,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """scala/eventSource/liveClock""", """controllers.ScalaEventSourceController.streamClock()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """createuser""", """controllers.HomeController.createuser()"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """adduser""", """controllers.HomeController.addUser()"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user""", """controllers.HomeController.user()"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """assets/""" + "$" + """file<.+>""", """controllers.Assets.at(path:String = "/public", file:String)"""),
     Nil
   ).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
@@ -188,11 +189,29 @@ class Routes(
     )
   )
 
-  // @LINE:20
-  private[this] lazy val controllers_Assets_at7_route = Route("GET",
+  // @LINE:19
+  private[this] lazy val controllers_HomeController_user7_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user")))
+  )
+  private[this] lazy val controllers_HomeController_user7_invoker = createInvoker(
+    HomeController_0.user(),
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.HomeController",
+      "user",
+      Nil,
+      "GET",
+      this.prefix + """user""",
+      """""",
+      Seq()
+    )
+  )
+
+  // @LINE:22
+  private[this] lazy val controllers_Assets_at8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_at7_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_at8_invoker = createInvoker(
     Assets_1.at(fakeValue[String], fakeValue[String]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -251,10 +270,16 @@ class Routes(
         controllers_HomeController_addUser6_invoker.call(HomeController_0.addUser())
       }
   
-    // @LINE:20
-    case controllers_Assets_at7_route(params@_) =>
+    // @LINE:19
+    case controllers_HomeController_user7_route(params@_) =>
+      call { 
+        controllers_HomeController_user7_invoker.call(HomeController_0.user())
+      }
+  
+    // @LINE:22
+    case controllers_Assets_at8_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
-        controllers_Assets_at7_invoker.call(Assets_1.at(path, file))
+        controllers_Assets_at8_invoker.call(Assets_1.at(path, file))
       }
   }
 }

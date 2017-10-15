@@ -1,4 +1,4 @@
-name := "apidevops"
+name := "play-scala-streaming-example"
 
 version := "2.6.x"
 

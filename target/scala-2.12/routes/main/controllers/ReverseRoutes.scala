@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/play-scala-streaming-example-2.6.x/conf/routes
-// @DATE:Sun Oct 08 20:03:27 IST 2017
+// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/conf/routes
+// @DATE:Sun Oct 15 18:37:42 IST 2017
 
 import play.api.mvc.Call
 
@@ -36,6 +36,12 @@ package controllers {
       Call("GET", _prefix)
     }
   
+    // @LINE:19
+    def user(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "user")
+    }
+  
   }
 
   // @LINE:12
@@ -59,14 +65,14 @@ package controllers {
   
   }
 
-  // @LINE:20
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:20
+    // @LINE:22
     def at(file:String): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))

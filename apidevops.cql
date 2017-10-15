@@ -8,3 +8,48 @@ CREATE TABLE IF NOT EXISTS apidevops.user (
         request text,
         data blob
         );
+        
+        CREATE TABLE IF NOT EXISTS apidevops.user (
+        id uuid,
+        username text PRIMARY KEY,
+        password text,
+        email text,
+        isactive text
+        );
+        
+        
+        {
+  "username": "Muruga",
+  "password": "123456789",
+  "email": "dinesh@apidevops.com",
+  "isactive": "true"
+}
+        
+nohup target/universal/stage/bin/apidevops -Dplay.http.secret.key=pazani -Dhttp.port=80 &
+        
+{
+  "name": "Blue Paper clips",
+  "ean": "12345432123",
+  "description": "Big box of paper clips",
+  "pieces": 500,
+  "manufacturer": {
+    "name": "Paperclipfactory Inc.",
+    "contact_details": {
+      "email": "contact@paperclipfactory.example.com",
+      "fax": null,
+      "phone": "+12345654321"
+    }
+  },
+  "tags": [
+    "paperclip",
+    "coated"
+  ],
+  "active": true
+}
+
+INSERT INTO  apidevops.user  (id, name, password, host, request) VALUES(now(), 'muruga', 'dinesh', 'host', 'request')
+
+
+
+
+ 

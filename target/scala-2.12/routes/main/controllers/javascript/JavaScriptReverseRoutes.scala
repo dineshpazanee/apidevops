@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/play-scala-streaming-example-2.6.x/conf/routes
-// @DATE:Sun Oct 08 20:03:27 IST 2017
+// @SOURCE:/home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/conf/routes
+// @DATE:Sun Oct 15 18:37:42 IST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -49,6 +49,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:19
+    def user: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.user",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
+        }
+      """
+    )
+  
   }
 
   // @LINE:12
@@ -81,7 +91,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:20
+  // @LINE:22
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -89,7 +99,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:20
+    // @LINE:22
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
