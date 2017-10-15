@@ -33,6 +33,19 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
     Ok(views.html.user())
   }
   
+  def login() = Action {
+    Ok(views.html.login())
+  }
+  
+  
+  def demo() = Action {
+    Ok(views.html.demo())
+  }
+  
+  
+  def register() = Action {
+    Ok(views.html.register())
+  }
   
   
   def createuser() = Action{

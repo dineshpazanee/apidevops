@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/conf/routes
-// @DATE:Sun Oct 15 18:37:42 IST 2017
+// @DATE:Sun Oct 15 22:10:20 IST 2017
 
 import play.api.mvc.Call
 
@@ -24,6 +24,24 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "adduser")
     }
   
+    // @LINE:23
+    def demo(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "demo")
+    }
+  
+    // @LINE:19
+    def user(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "user")
+    }
+  
+    // @LINE:25
+    def register(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "register")
+    }
+  
     // @LINE:15
     def createuser(): Call = {
       
@@ -36,10 +54,10 @@ package controllers {
       Call("GET", _prefix)
     }
   
-    // @LINE:19
-    def user(): Call = {
+    // @LINE:21
+    def login(): Call = {
       
-      Call("GET", _prefix + { _defaultPrefix } + "user")
+      Call("GET", _prefix + { _defaultPrefix } + "login")
     }
   
   }
@@ -65,14 +83,14 @@ package controllers {
   
   }
 
-  // @LINE:22
+  // @LINE:29
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:22
+    // @LINE:29
     def at(file:String): Call = {
       implicit val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public")))
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[String]].unbind("file", file))

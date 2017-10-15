@@ -54,7 +54,7 @@ Seq[Any](format.raw/*1.4*/("""
 
               /*
                   -- GENERATED --
-                  DATE: Sun Oct 15 18:37:44 IST 2017
+                  DATE: Sun Oct 15 20:01:27 IST 2017
                   SOURCE: /home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/app/views/index.scala.html
                   HASH: bf393b33052d6a274dd86de7d49cf9914734bea8
                   MATRIX: 722->1|818->3|846->6|857->10|895->12|927->18|1007->72|1021->78|1070->107|1204->214|1219->220|1275->255|1347->297

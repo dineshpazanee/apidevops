@@ -4,7 +4,7 @@
 		module="play-scala-streaming-example_2.12"
 		revision="2.6.x"
 		status="integration"
-		publication="20171015183725"
+		publication="20171015200053"
 	>
 		<description>
 		play-scala-streaming-example

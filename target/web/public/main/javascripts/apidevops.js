@@ -31,6 +31,13 @@ var getEventSource = function(url) {
 }
 
 
+$(window).load(function () {
+	if ($(window).width() > 768) {
+		$.app.nav.init({speed: 0});
+		$.app.menu.toggle();
+	}
+	$.app.nav.init({speed: 2000});
+});
 
 $(document).ready(function() {
 			// alert("window is loaded");

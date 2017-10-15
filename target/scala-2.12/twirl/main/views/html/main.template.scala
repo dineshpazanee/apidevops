@@ -82,12 +82,13 @@ Seq[Any](format.raw/*1.17*/("""
             <ul class="nav navbar-nav">
               <li class="nav-item hidden-sm-down"><a class="nav-link nav-menu-main menu-toggle hidden-xs"><i class="icon-menu5">         </i></a></li>
               <li class="nav-item hidden-sm-down"><a href="#" class="nav-link nav-link-expand"><i class="ficon icon-expand2"></i></a></li>
-              <li class="nav-item hidden-sm-down"><a href="https://pixinvent.com/bootstrap-admin-template/robust/" target="_blank" class="btn btn-success upgrade-to-pro">Upgrade to PRO $24</a></li>
+              <li class="nav-item hidden-sm-down"><a href=""""),_display_(/*60.61*/routes/*60.67*/.HomeController.login()),format.raw/*60.90*/("""" target="" class="btn btn-success upgrade-to-pro">Login</a></li>
             </ul>
             <ul class="nav navbar-nav float-xs-right">
               <li class="dropdown dropdown-language nav-item"><a id="dropdown-flag" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link"><i class="flag-icon flag-icon-gb"></i><span class="selected-language">English</span></a>
                 <div aria-labelledby="dropdown-flag" class="dropdown-menu"><a href="#" class="dropdown-item"><i class="flag-icon flag-icon-gb"></i> English</a><a href="#" class="dropdown-item"><i class="flag-icon flag-icon-fr"></i> French</a><a href="#" class="dropdown-item"><i class="flag-icon flag-icon-cn"></i> Chinese</a><a href="#" class="dropdown-item"><i class="flag-icon flag-icon-de"></i> German</a></div>
               </li>
+              <!--
               <li class="dropdown dropdown-notification nav-item"><a href="#" data-toggle="dropdown" class="nav-link nav-link-label"><i class="ficon icon-bell4"></i><span class="tag tag-pill tag-default tag-danger tag-default tag-up">5</span></a>
                 <ul class="dropdown-menu dropdown-menu-media dropdown-menu-right">
                   <li class="dropdown-menu-header">
@@ -175,12 +176,13 @@ Seq[Any](format.raw/*1.17*/("""
                       </div></a></li>
                   <li class="dropdown-menu-footer"><a href="javascript:void(0)" class="dropdown-item text-muted text-xs-center">Read all messages</a></li>
                 </ul>
-              </li>
+              </li>            
               <li class="dropdown dropdown-user nav-item"><a href="#" data-toggle="dropdown" class="dropdown-toggle nav-link dropdown-user-link"><span class="avatar avatar-online"><img src="../../app-assets/images/portrait/small/avatar-s-1.png" alt="avatar"><i></i></span><span class="user-name">John Doe</span></a>
                 <div class="dropdown-menu dropdown-menu-right"><a href="#" class="dropdown-item"><i class="icon-head"></i> Edit Profile</a><a href="#" class="dropdown-item"><i class="icon-mail6"></i> My Inbox</a><a href="#" class="dropdown-item"><i class="icon-clipboard2"></i> Task</a><a href="#" class="dropdown-item"><i class="icon-calendar5"></i> Calender</a>
                   <div class="dropdown-divider"></div><a href="#" class="dropdown-item"><i class="icon-power3"></i> Logout</a>
                 </div>
               </li>
+              -->
             </ul>
           </div>
         </div>
@@ -315,8 +317,7 @@ Seq[Any](format.raw/*1.17*/("""
               </li>
               <li><a href="component-tabs-component.html" data-i18n="nav.components.component_tabs_component" class="menu-item">Tabs Component</a>
               </li>
-              <li><a h"""),
-format.raw("""ref="component-pills-component.html" data-i18n="nav.components.component_pills_component" class="menu-item">Pills Component</a>
+              <li><a href="component-pills-component.html" data-i18n="nav.components.component_pills_component" class="menu-item">Pills Component</a>
               </li>
               <li><a href="component-tooltips.html" data-i18n="nav.components.component_tooltips" class="menu-item">Tooltips</a>
               </li>
@@ -340,7 +341,8 @@ format.raw("""ref="component-pills-component.html" data-i18n="nav.components.com
               </li>
               <li><a href="icons-fps-line.html" data-i18n="nav.icons.icons_fps_line" class="menu-item">FPS Line Icons</a>
               </li>
-              <li><a href="icons-ico-moon.html" data-i18n="nav.icons.icons_ico_moon" class="menu-item">Ico Moon</a>
+              <li><a href="icons-ico-moon.html" data-i18n="nav.icons.icons_ico_moon" class="menu-item">Ico Moon<"""),
+format.raw("""/a>
               </li>
               <li><a href="icons-font-awesome.html" data-i18n="nav.icons.icons_font_awesome" class="menu-item">Font Awesome</a>
               </li>
@@ -486,357 +488,6 @@ format.raw("""ref="component-pills-component.html" data-i18n="nav.components.com
     </div>
     <!-- / main menu-->
 
-    <div class="app-content content container-fluid">
-      <div class="content-wrapper">
-        <div class="content-header row">
-        </div>
-        <div class="content-body"><!-- stats -->
-<div class="row">
-    <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-block">
-                    <div class="media">
-                        <div class="media-body text-xs-left">
-                            <h3 class="pink">278</h3>
-                            <span>New Projects</span>
-                        </div>
-                        <div class="media-right media-middle">
-                            <i class="icon-bag2 pink font-large-2 float-xs-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-block">
-                    <div class="media">
-                        <div class="media-body text-xs-left">
-                            <h3 class="teal">156</h3>
-                            <span>New Clients</span>
-                        </div>
-                        <div class="media-right media-middle">
-                            <i class="icon-user1 teal font-large-2 float-xs-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-block">
-                    <div class="media">
-                        <div class="media-body text-xs-left">
-                            <h3 class="deep-orange">64.89 %</h3>
-                            <span>Conversion Rate</span>
-                        </div>
-                        <div class="media-right media-middle">
-                            <i class="icon-diagram deep-orange font-large-2 float-xs-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-3 col-lg-6 col-xs-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="card-block">
-                    <div class="media">
-                        <div class="media-body text-xs-left">
-                            <h3 class="cyan">423</h3>
-                            <span>Support Tickets</span>
-                        </div>
-                        <div class="media-right media-middle">
-                            <i class="icon-ios-help-outline cyan font-large-2 float-xs-right"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ stats -->
-<!--/ project charts -->
-<div class="row">
-    <div class="col-xl-8 col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <ul class="list-inline text-xs-center pt-2 m-0">
-                    <li class="mr-1">
-                        <h6><i class="icon-circle warning"></i> <span class="grey darken-1">Remaining</span></h6>
-                    </li>
-                    <li class="mr-1">
-                        <h6><i class="icon-circle success"></i> <span class="grey darken-1">Completed</span></h6>
-                    </li>
-                </ul>
-                <div class="chartjs height-250">
-                    <canvas id="line-stacked-area" height="250"></canvas>
-                </div>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col-xs-3 text-xs-center">
-                        <span class="text-muted">Total Projects</span>
-                        <h2 class="block font-weight-normal">18</h2>
-                        <progress class="progress progress-xs mt-2 progress-success" value="70" max="100"></progress>
-                    </div>
-                    <div class="col-xs-3 text-xs-center">
-                        <span class="text-muted">Total Task</span>
-                        <h2 class="block font-weight-normal">125</h2>
-                        <progress class="progress progress-xs mt-2 progress-success" value="40" max="100"></progress>
-                    </div>
-                    <div class="col-xs-3 text-xs-center">
-                        <span class="text-muted">Completed Task</span>
-                        <h2 class="block font-weight-normal">242</h2>
-                        <progress class="progress progress-xs mt-2 progress-success" value="60" max="100"></progress>
-                    </div>
-                    <div class="col-xs-3 text-xs-center">
-                        <span class="text-muted">Total Revenue</span>
-                        <h2 class="block font-weight-normal">$11,582</h2>
-                        <progress class="progress progress-xs mt-2 progress-success" value="90" max="100"></progress>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-lg-12">
-        <div class="card card-inverse bg-info">
-            <div class="card-body">
-                <div class="position-relative">
-                    <div class="chart-title position-absolute mt-2 ml-2 white">
-                        <h1 class="display-4">84%</h1>
-                        <span>Employees Satisfied</span>
-                    </div>
-                    <canvas id="emp-satisfaction" class="height-400 block"></canvas>
-                    <div class="chart-stats position-absolute position-bottom-0 position-right-0 mb-2 mr-3 white">
-                        <a href="#" class="btn bg-info bg-darken-3 mr-1 white">Statistics <i class="icon-stats-bars"></i></a> for the last year.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--/ project charts -->
-<!-- Recent invoice with Statistics -->
-<div class="row match-height">
-    <div class="col-xl-4 col-lg-12">
-        <div class="card">
-            <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-deep-orange media-left media-middle">
-                        <i class="icon-user1 font-large-2 white"></i>
-                    </div>
-                    <div class="p-2 media-body">
-                        <h5 class="deep-orange">New Users</h5>
-                        <h5 class="text-bold-400">1,22,356</h5>
-                        <progress class="progress progress-sm progress-deep-orange mt-1 mb-0" value="45" max="100"></progress>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <div class="media">
-                    <div class="p-2 text-xs-center bg-cyan media-left media-middle">
-                        <i class="icon-camera7 font-large-2 white"></i>
-                    </div>
-                    <div class="p-2 media-body">
-                        <h5>New Products</h5>
-                        <h5 class="text-bold-400">28</h5>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-body">
-                <div class="media">
-                    <div class="p-2 media-body text-xs-left">
-                        <h5>New Users</h5>
-                        <h5 class="text-bold-400">1,22,356</h5>
-                    </div>
-                    <div class="p-2 text-xs-center bg-teal media-right media-middle">
-                        <i class="icon-user1 font-large-2 white">"""),
-format.raw("""</i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-8 col-lg-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">Recent Invoices</h4>
-                <a class="heading-elements-toggle"><i class="icon-ellipsis font-medium-3"></i></a>
-                <div class="heading-elements">
-                    <ul class="list-inline mb-0">
-                        <li><a data-action="reload"><i class="icon-reload"></i></a></li>
-                        <li><a data-action="expand"><i class="icon-expand2"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card-block">
-                    <p>Total paid invoices 240, unpaid 150. <span class="float-xs-right"><a href="#">Invoice Summary <i class="icon-arrow-right2"></i></a></span></p>
-                </div>
-                <div class="table-responsive">
-                    <table class="table table-hover mb-0">
-                        <thead>
-                            <tr>
-                                <th>Invoice#</th>
-                                <th>Customer Name</th>
-                                <th>Status</th>
-                                <th>Due</th>
-                                <th>Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="text-truncate"><a href="#">INV-001001</a></td>
-                                <td class="text-truncate">Elizabeth W.</td>
-                                <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                <td class="text-truncate">10/05/2016</td>
-                                <td class="text-truncate">$ 1200.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-truncate"><a href="#">INV-001012</a></td>
-                                <td class="text-truncate">Andrew D.</td>
-                                <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                <td class="text-truncate">20/07/2016</td>
-                                <td class="text-truncate">$ 152.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-truncate"><a href="#">INV-001401</a></td>
-                                <td class="text-truncate">Megan S.</td>
-                                <td class="text-truncate"><span class="tag tag-default tag-success">Paid</span></td>
-                                <td class="text-truncate">16/11/2016</td>
-                                <td class="text-truncate">$ 1450.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-truncate"><a href="#">INV-01112</a></td>
-                                <td class="text-truncate">Doris R.</td>
-                                <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
-                                <td class="text-truncate">11/12/2016</td>
-                                <td class="text-truncate">$ 5685.00</td>
-                            </tr>
-                            <tr>
-                                <td class="text-truncate"><a href="#">INV-008101</a></td>
-                                <td class="text-truncate">Walter R.</td>
-                                <td class="text-truncate"><span class="tag tag-default tag-warning">Overdue</span></td>
-                                <td class="text-truncate">18/05/2016</td>
-                                <td class="text-truncate">$ 685.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Recent invoice with Statistics -->
-<div class="row match-height">
-    <div class="col-xl-4 col-md-6 col-sm-12">
-        <div class="card" style="height: 440px;">
-            <div class="card-body">
-                <img class="card-img-top img-fluid" src="../../app-assets/images/carousel/05.jpg" alt="Card image cap">
-                <div class="card-block">
-                    <h4 class="card-title">Basic</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-outline-pink">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-md-6 col-sm-12">
-        <div class="card" style="height: 440px;">
-            <div class="card-body">
-                <div class="card-block">
-                    <h4 class="card-title">List Group</h4>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                        <span class="tag tag-default tag-pill bg-primary float-xs-right">4</span> Cras justo odio
-                    </li>
-                    <li class="list-group-item">
-                        <span class="tag tag-default tag-pill bg-info float-xs-right">2</span> Dapibus ac facilisis in
-                    </li>
-                    <li class="list-group-item">
-                        <span class="tag tag-default tag-pill bg-warning float-xs-right">1</span> Morbi leo risus
-                    </li>
-                    <li class="list-group-item">
-                        <span class="tag tag-default tag-pill bg-success float-xs-right">3</span> Porta ac consectetur ac
-                    </li>
-                    <li class="list-group-item">
-                        <span class="tag tag-default tag-pill bg-danger float-xs-right">8</span> Vestibulum at eros
-                    </li>
-                </ul>
-                <div class="card-block">
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-xl-4 col-md-12 col-sm-12">
-        <div class="card" style="height: 440px;">
-            <div class="card-body">
-                <div class="card-block">
-                    <h4 class="card-title">Carousel</h4>
-                    <h6 class="card-subtitle text-muted">Support card subtitle</h6>
-                </div>
-                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel-example-generic" data-slide-to="0" class=""></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="1" class="active"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="carousel-item">
-                            <img src="../../app-assets/images/carousel/02.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item active">
-                            <img src="../../app-assets/images/carousel/03.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../../app-assets/images/carousel/01.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                        <span class="icon-prev" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                        <span class="icon-next" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-                <div class="card-block">
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-        </div>
-      </div>
-    </div>
-    <!-- ////////////////////////////////////////////////////////////////////////////-->
-
-
-    <!-- main menu-->
-    
-      <!-- /main menu content-->
-      <!-- main menu footer-->
-      <!-- include includes/menu-footer-->
-      <!-- main menu footer-->
-    </div>
     <!-----------------------------/ main menu-------------------------------------->
       <div class="app-content content container-fluid">
       <div class="content-wrapper">
@@ -847,11 +498,11 @@ format.raw("""</i>
         
         <div id="result"></div>
 
-        """),_display_(/*823.10*/content),format.raw/*823.17*/("""
+        """),_display_(/*475.10*/content),format.raw/*475.17*/("""
         
      
 
-        """),format.raw/*827.9*/("""</div>
+        """),format.raw/*479.9*/("""</div>
       </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
@@ -862,28 +513,28 @@ format.raw("""</i>
     </footer>
 
     <!-- BEGIN VENDOR JS-->
-    <script src=""""),_display_(/*838.19*/routes/*838.25*/.Assets.at("javascripts/jquery-1.7.1.min.js")),format.raw/*838.70*/("""" type="text/javascript"></script>
-    <script src='"""),_display_(/*839.19*/routes/*839.25*/.Assets.at("/app-assets/js/core/libraries/jquery.min.js")),format.raw/*839.82*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*840.19*/routes/*840.25*/.Assets.at("/app-assets/vendors/js/ui/tether.min.js")),format.raw/*840.78*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*841.19*/routes/*841.25*/.Assets.at("/app-assets/js/core/libraries/bootstrap.min.js")),format.raw/*841.85*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*842.19*/routes/*842.25*/.Assets.at("/app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js")),format.raw/*842.96*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*843.19*/routes/*843.25*/.Assets.at("/app-assets/vendors/js/ui/unison.min.js")),format.raw/*843.78*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*844.19*/routes/*844.25*/.Assets.at("/app-assets/vendors/js/ui/blockUI.min.js")),format.raw/*844.79*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*845.19*/routes/*845.25*/.Assets.at("/app-assets/vendors/js/ui/jquery.matchHeight-min.js")),format.raw/*845.90*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*846.19*/routes/*846.25*/.Assets.at("/app-assets/vendors/js/ui/screenfull.min.js" )),format.raw/*846.83*/("""'type="text/javascript"></script>
-    <script src='"""),_display_(/*847.19*/routes/*847.25*/.Assets.at("/app-assets/vendors/js/extensions/pace.min.js")),format.raw/*847.84*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*490.19*/routes/*490.25*/.Assets.at("javascripts/jquery-1.7.1.min.js")),format.raw/*490.70*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*491.19*/routes/*491.25*/.Assets.at("/app-assets/js/core/libraries/jquery.min.js")),format.raw/*491.82*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*492.19*/routes/*492.25*/.Assets.at("/app-assets/vendors/js/ui/tether.min.js")),format.raw/*492.78*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*493.19*/routes/*493.25*/.Assets.at("/app-assets/js/core/libraries/bootstrap.min.js")),format.raw/*493.85*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*494.19*/routes/*494.25*/.Assets.at("/app-assets/vendors/js/ui/perfect-scrollbar.jquery.min.js")),format.raw/*494.96*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*495.19*/routes/*495.25*/.Assets.at("/app-assets/vendors/js/ui/unison.min.js")),format.raw/*495.78*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*496.19*/routes/*496.25*/.Assets.at("/app-assets/vendors/js/ui/blockUI.min.js")),format.raw/*496.79*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*497.19*/routes/*497.25*/.Assets.at("/app-assets/vendors/js/ui/jquery.matchHeight-min.js")),format.raw/*497.90*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*498.19*/routes/*498.25*/.Assets.at("/app-assets/vendors/js/ui/screenfull.min.js" )),format.raw/*498.83*/("""'type="text/javascript"></script>
+    <script src='"""),_display_(/*499.19*/routes/*499.25*/.Assets.at("/app-assets/vendors/js/extensions/pace.min.js")),format.raw/*499.84*/("""' type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src='"""),_display_(/*850.19*/routes/*850.25*/.Assets.at("/app-assets/vendors/js/charts/chart.min.js")),format.raw/*850.81*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*502.19*/routes/*502.25*/.Assets.at("/app-assets/vendors/js/charts/chart.min.js")),format.raw/*502.81*/("""' type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN ROBUST JS-->
-    <script src='"""),_display_(/*853.19*/routes/*853.25*/.Assets.at("/app-assets/js/core/app-menu.js")),format.raw/*853.70*/("""' type="text/javascript"></script>
-    <script src='"""),_display_(/*854.19*/routes/*854.25*/.Assets.at("/app-assets/js/core/app.js")),format.raw/*854.65*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*505.19*/routes/*505.25*/.Assets.at("/app-assets/js/core/app-menu.js")),format.raw/*505.70*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*506.19*/routes/*506.25*/.Assets.at("/app-assets/js/core/app.js")),format.raw/*506.65*/("""' type="text/javascript"></script>
     <!-- END ROBUST JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src='"""),_display_(/*857.19*/routes/*857.25*/.Assets.at("/app-assets/js/scripts/pages/dashboard-lite.js")),format.raw/*857.85*/("""' type="text/javascript"></script>
+    <script src='"""),_display_(/*509.19*/routes/*509.25*/.Assets.at("/app-assets/js/scripts/pages/dashboard-lite.js")),format.raw/*509.85*/("""' type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
-    <script src=""""),_display_(/*859.19*/routes/*859.25*/.Assets.at("javascripts/apidevops.js")),format.raw/*859.63*/("""" type="text/javascript"></script>
+    <script src='"""),_display_(/*511.19*/routes/*511.25*/.Assets.at("javascripts/apidevops.js")),format.raw/*511.63*/("""' type="text/javascript"></script>
   </body>
 </html>
 """))
@@ -902,11 +553,11 @@ format.raw("""</i>
 
               /*
                   -- GENERATED --
-                  DATE: Sun Oct 15 18:41:30 IST 2017
+                  DATE: Sun Oct 15 21:54:48 IST 2017
                   SOURCE: /home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/app/views/main.scala.html
-                  HASH: 95dab06e4e413675b552ea1dd0013ae13f54c9aa
-                  MATRIX: 726->1|836->16|864->18|1360->487|1375->493|1451->547|1535->604|1550->610|1626->664|1712->723|1727->729|1804->784|1890->843|1905->849|1982->904|2069->964|2084->970|2154->1018|2238->1075|2253->1081|2326->1132|2405->1184|2420->1190|2475->1224|2559->1281|2574->1287|2627->1319|2926->1591|2941->1597|3006->1640|3109->1716|3124->1722|3189->1765|3269->1818|3284->1824|3373->1891|3453->1944|3468->1950|3547->2007|3683->2116|3698->2122|3772->2174|3852->2227|3867->2233|3925->2270|4005->2323|4020->2329|4081->2369|4221->2482|4236->2488|4326->2556|4406->2609|4421->2615|4519->2691|4599->2744|4614->2750|4698->2812|4838->2925|4853->2931|4909->2966|54405->52394|54434->52401|54487->52426|55143->53054|55159->53060|55226->53105|55307->53158|55323->53164|55402->53221|55483->53274|55499->53280|55574->53333|55655->53386|55671->53392|55753->53452|55834->53505|55850->53511|55943->53582|56024->53635|56040->53641|56115->53694|56196->53747|56212->53753|56288->53807|56369->53860|56385->53866|56472->53931|56553->53984|56569->53990|56649->54048|56729->54100|56745->54106|56826->54165|56968->54279|56984->54285|57062->54341|57202->54453|57218->54459|57285->54504|57366->54557|57382->54563|57444->54603|57583->54714|57599->54720|57681->54780|57792->54863|57808->54869|57868->54907
-                  LINES: 21->1|26->1|28->3|36->11|36->11|36->11|37->12|37->12|37->12|38->13|38->13|38->13|39->14|39->14|39->14|40->15|40->15|40->15|41->16|41->16|41->16|42->17|42->17|42->17|43->18|43->18|43->18|48->23|48->23|48->23|50->25|50->25|50->25|51->26|51->26|51->26|52->27|52->27|52->27|55->30|55->30|55->30|56->31|56->31|56->31|57->32|57->32|57->32|60->35|60->35|60->35|61->36|61->36|61->36|62->37|62->37|62->37|65->40|65->40|65->40|850->823|850->823|854->827|865->838|865->838|865->838|866->839|866->839|866->839|867->840|867->840|867->840|868->841|868->841|868->841|869->842|869->842|869->842|870->843|870->843|870->843|871->844|871->844|871->844|872->845|872->845|872->845|873->846|873->846|873->846|874->847|874->847|874->847|877->850|877->850|877->850|880->853|880->853|880->853|881->854|881->854|881->854|884->857|884->857|884->857|886->859|886->859|886->859
+                  HASH: 170d5aa0f9417edb189c6ac258a30610916d94dc
+                  MATRIX: 726->1|836->16|864->18|1360->487|1375->493|1451->547|1535->604|1550->610|1626->664|1712->723|1727->729|1804->784|1890->843|1905->849|1982->904|2069->964|2084->970|2154->1018|2238->1075|2253->1081|2326->1132|2405->1184|2420->1190|2475->1224|2559->1281|2574->1287|2627->1319|2926->1591|2941->1597|3006->1640|3109->1716|3124->1722|3189->1765|3269->1818|3284->1824|3373->1891|3453->1944|3468->1950|3547->2007|3683->2116|3698->2122|3772->2174|3852->2227|3867->2233|3925->2270|4005->2323|4020->2329|4081->2369|4221->2482|4236->2488|4326->2556|4406->2609|4421->2615|4519->2691|4599->2744|4614->2750|4698->2812|4838->2925|4853->2931|4909->2966|6647->4677|6662->4683|6706->4706|37546->35498|37575->35505|37628->35530|38284->36158|38300->36164|38367->36209|38448->36262|38464->36268|38543->36325|38624->36378|38640->36384|38715->36437|38796->36490|38812->36496|38894->36556|38975->36609|38991->36615|39084->36686|39165->36739|39181->36745|39256->36798|39337->36851|39353->36857|39429->36911|39510->36964|39526->36970|39613->37035|39694->37088|39710->37094|39790->37152|39870->37204|39886->37210|39967->37269|40109->37383|40125->37389|40203->37445|40343->37557|40359->37563|40426->37608|40507->37661|40523->37667|40585->37707|40724->37818|40740->37824|40822->37884|40933->37967|40949->37973|41009->38011
+                  LINES: 21->1|26->1|28->3|36->11|36->11|36->11|37->12|37->12|37->12|38->13|38->13|38->13|39->14|39->14|39->14|40->15|40->15|40->15|41->16|41->16|41->16|42->17|42->17|42->17|43->18|43->18|43->18|48->23|48->23|48->23|50->25|50->25|50->25|51->26|51->26|51->26|52->27|52->27|52->27|55->30|55->30|55->30|56->31|56->31|56->31|57->32|57->32|57->32|60->35|60->35|60->35|61->36|61->36|61->36|62->37|62->37|62->37|65->40|65->40|65->40|85->60|85->60|85->60|501->475|501->475|505->479|516->490|516->490|516->490|517->491|517->491|517->491|518->492|518->492|518->492|519->493|519->493|519->493|520->494|520->494|520->494|521->495|521->495|521->495|522->496|522->496|522->496|523->497|523->497|523->497|524->498|524->498|524->498|525->499|525->499|525->499|528->502|528->502|528->502|531->505|531->505|531->505|532->506|532->506|532->506|535->509|535->509|535->509|537->511|537->511|537->511
                   -- GENERATED --
               */
           

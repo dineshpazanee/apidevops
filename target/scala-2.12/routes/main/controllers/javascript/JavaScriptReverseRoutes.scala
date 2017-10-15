@@ -1,7 +1,7 @@
 
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/dinesh/Documents/devlopment/apidevops/apidevops-git/apidevops/conf/routes
-// @DATE:Sun Oct 15 18:37:42 IST 2017
+// @DATE:Sun Oct 15 22:10:20 IST 2017
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -29,6 +29,36 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:23
+    def demo: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.demo",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "demo"})
+        }
+      """
+    )
+  
+    // @LINE:19
+    def user: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.user",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
+        }
+      """
+    )
+  
+    // @LINE:25
+    def register: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.register",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
+        }
+      """
+    )
+  
     // @LINE:15
     def createuser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.createuser",
@@ -49,12 +79,12 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:19
-    def user: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.user",
+    // @LINE:21
+    def login: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.login",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "user"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "login"})
         }
       """
     )
@@ -91,7 +121,7 @@ package controllers.javascript {
   
   }
 
-  // @LINE:22
+  // @LINE:29
   class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -99,7 +129,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:22
+    // @LINE:29
     def at: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.Assets.at",
       """
