@@ -32,7 +32,7 @@ var getEventSource = function(url) {
 
 
 $(window).load(function () {
-	if ($(window).width() > 768) {
+	if ($(window).width() > 7) {
 		$.app.nav.init({speed: 0});
 		$.app.menu.toggle();
 	}
