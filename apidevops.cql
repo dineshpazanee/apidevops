@@ -27,6 +27,9 @@ CREATE TABLE IF NOT EXISTS apidevops.user (
      
         
 nohup target/universal/stage/bin/apidevops -Dplay.http.secret.key=pazani -Dhttp.port=80 &
+
+
+sudo nohup target/universal/stage/bin/play-scala-streaming-example -Dplay.http.secret.key=pazani -Dhttp.port=80 &
         
 {
   "name": "Blue Paper clips",

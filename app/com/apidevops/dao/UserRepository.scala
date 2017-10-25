@@ -6,6 +6,7 @@ import scala.concurrent.Future
 import com.datastax.driver.core._
 import com.datastax.driver.core.BoundStatement
 import com.datastax.driver.core.PreparedStatement;
+
 import models.User
 /*case class User(id: UUID, name: String, password: String, host: String, request: String)*/
 

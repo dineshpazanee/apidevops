@@ -1,4 +1,4 @@
-name := "play-scala-streaming-example"
+name := "apidevops"
 
 version := "2.6.x"
 
@@ -22,6 +22,8 @@ libraryDependencies += ws % Test
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "3.1.0" % Test
 
 libraryDependencies += "com.datastax.cassandra" % "cassandra-driver-core" % "3.1.2"
+libraryDependencies += "com.datastax.cassandra" % "cassandra-driver-mapping" % "2.1.0-rc1"
+
 
 
 

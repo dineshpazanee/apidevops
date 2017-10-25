@@ -10,6 +10,9 @@ import play.api.libs.json._
 import play.api.libs.json.Reads._
 import play.api.libs.functional.syntax._
 
+import play.api.data._
+import play.api.data.Forms._
+
 import com.datastax.driver.core._
 import play.filters.csrf.CSRFFilter
 
@@ -21,6 +24,7 @@ import play.api.mvc.{AbstractController, ControllerComponents}
 import play.api.libs.concurrent.Execution.Implicits._
 import com.apidevops.dao.UserRepository
 import models.User
+import models.UserData
 
 
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
@@ -66,7 +70,20 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
   
 /*  implicit val reads:Reads[User] = Json.reads[User]*/
   
+  val userForm = Form(
+  mapping(
+    "userName" -> text,
+    "userEmail" -> text,
+    "userPassword" -> text
+  )(UserData.apply)(UserData.unapply)
+)
   
+  val userPost = Action(parse.form(userForm)) { implicit request =>
+  val userData = request.body
+  val newUser = models.UserData(userData.userName, userData.userEmail, userData.userPassword)
+  println("----------------- "+newUser.userName)
+    Ok(Json.toJson(newUser.userName+" "+newUser.userEmail+" "+newUser.userPassword))
+  }
   
   
    def addUser() = Action { implicit request =>
@@ -122,6 +139,7 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
         println("------------------- done" +value)
         Ok("Got request "+value)
     }
+       
        
   
 }
