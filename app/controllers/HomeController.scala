@@ -25,21 +25,42 @@ import play.api.libs.concurrent.Execution.Implicits._
 import com.apidevops.dao.UserRepository
 import models.User
 import models.UserData
+import models.LoginUser
+import models.UserForm
 
 
 class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
 
-  def index() = Action {
-    Ok(views.html.index())
-  }
-  
-  def user() = Action {
-    Ok(views.html.user())
+  def index() = Action { implicit request =>
+      var sessionUser = request.session.get("username")
+      if(sessionUser != None){
+        println("-----------> 1 "+sessionUser)
+        Ok(views.html.index())
+      }else{
+        println("-----------> 2 "+sessionUser)
+        Redirect(routes.HomeController.login)
+      }
   }
   
   def login() = Action {
     Ok(views.html.login())
   }
+  
+  
+  def loginUser() = Action(parse.form(UserForm.loginForm)) { implicit request =>
+    val loginForm = request.body
+    val loginUser = models.LoginUser(loginForm.userName, loginForm.userPassword)
+    println(loginUser.userName+" ####### "+loginUser.userPassword)
+      Ok(views.html.login())
+  }
+  
+  
+  
+  def user() = Action {
+    Ok(views.html.user())
+  }
+  
+  
   
   
   def demo() = Action {

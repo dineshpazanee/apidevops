@@ -9,7 +9,9 @@ import play.api.libs.functional.syntax._
 case class User(id: Option[UUID], username: String, password: String, 
                 email: Option[String], isactive: String)
 
-case class UserData(userName: String, userEmail: String, userPassword: String)                
+case class UserData(userName: String, userEmail: String, userPassword: String)  
+
+case class LoginUser(userName: String,  userPassword: String)  
                 
 // the converters should be placed in a 
 // companion object

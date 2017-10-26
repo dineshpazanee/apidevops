@@ -36,7 +36,7 @@ $(window).load(function () {
 		$.app.nav.init({speed: 0});
 		$.app.menu.toggle();
 	}
-	$.app.nav.init({speed: 2000});
+	$.app.nav.init({speed: 10});
 });
 
 $(document).ready(function() {

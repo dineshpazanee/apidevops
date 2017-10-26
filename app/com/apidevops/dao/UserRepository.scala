@@ -8,9 +8,17 @@ import com.datastax.driver.core.BoundStatement
 import com.datastax.driver.core.PreparedStatement;
 
 import models.User
+import models.LoginUser
+
 /*case class User(id: UUID, name: String, password: String, host: String, request: String)*/
 
 class UserRepository {
+  
+  
+  def checkLoginUser(loginUser:LoginUser):Any = {
+    
+  }
+  
   
   def insertuser(user:User):Any = {
      val cluster = Cluster.builder().addContactPoint("localhost")
