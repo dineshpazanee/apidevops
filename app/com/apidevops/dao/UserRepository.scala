@@ -14,9 +14,17 @@ import models.LoginUser
 
 class UserRepository {
   
-  
+  //https://stackoverflow.com/questions/34701817/what-is-the-most-efficient-way-to-map-transform-cast-a-cassandra-boundstatement
   def checkLoginUser(loginUser:LoginUser):Any = {
-    
+      
+    val cluster = Cluster.builder().addContactPoint("localhost")
+        .withPort(9042)
+        .build()
+  
+     val session = cluster.connect()
+     
+ //    ResultSet rs = session.execute("select user_id, post_id, title from posts where user_id = " + u1.getUserId());
+
   }
   
   
