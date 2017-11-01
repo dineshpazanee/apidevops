@@ -27,14 +27,19 @@ import models.User
 import models.UserData
 import models.LoginUser
 import models.UserForm
+import repositories.PersonRepository
+
+import scala.concurrent.{ExecutionContext, Future}
 
 
-class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: ControllerComponents) extends AbstractController(cc) {
 
   def index() = Action { implicit request =>
       var sessionUser = request.session.get("username")
       if(sessionUser != None){
         println("-----------> 1 "+sessionUser)
+        var uuidtemp = UUID.fromString("496e05e1-aea0-39c4-a558-00e8a7b9ea28")
+         personRepo.find(uuidtemp)
         Ok(views.html.index())
       }else{
         println("-----------> 2 "+sessionUser)
