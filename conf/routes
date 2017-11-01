@@ -30,7 +30,9 @@ GET        /demo					       		controllers.HomeController.demo()
 
 GET        /register					       		controllers.HomeController.register()
 
-POST        /userPost					       		controllers.HomeController.userPost()
+POST    /userPost					       		controllers.HomeController.userPost()
+
+POST    /createuser					       		controllers.HomeController.createperson()
 
 # An example controller showing a sample home page
 GET     /persons                     controllers.PersonController.findAll(next: Option[String])

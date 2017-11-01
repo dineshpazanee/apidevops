@@ -27,18 +27,29 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
   object id extends UUIDColumn(this) with PartitionKey
 
   object firstName extends StringColumn(this) {
-    override def name: String = "first_name"
+    override def name: String = "firstName"
   }
 
   object lastName extends StringColumn(this) {
-    override def name: String = "last_name"
+    override def name: String = "lastName"
   }
 
-  object studentId extends StringColumn(this) {
-    override def name: String = "student_id"
+ 
+  object userId extends StringColumn(this) with Index
+  
+  object email extends StringColumn(this) {
+    override def name: String = "email"
+  }
+  
+  object password extends StringColumn(this) {
+    override def name: String = "password"
+  }
+  
+  object gender extends StringColumn(this) {
+    override def name: String = "gender"
   }
 
-  object gender extends EnumColumn[Gender.Value](this)
+ // object gender extends EnumColumn[Gender.Value](this)
 
   override implicit val monad: Monad[Future] = cats.instances.future.catsStdInstancesForFuture
 
@@ -46,7 +57,9 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
     insert.value(_.id, person.id)
       .value(_.firstName, person.firstName)
       .value(_.lastName, person.lastName)
-      .value(_.studentId, person.studentId)
+      .value(_.userId, person.userId)
+      .value(_.password, person.password)
+      .value(_.email, person.email)
       .value(_.gender, person.gender)
       .consistencyLevel_=(ConsistencyLevel.LOCAL_QUORUM)
       .future()
@@ -57,6 +70,10 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
     select.where(_.id eqs personId)
       .consistencyLevel_=(ConsistencyLevel.LOCAL_QUORUM)
       .one()
+      
+  def findUser(user_Id: String): Future[Option[Person]] = {
+    select.where(_.userId eqs user_Id).one()
+  }    
 
   // can be more fancy https://github.com/outworkers/phantom/wiki/Querying#update-queries
   override def update(person: Person): Future[Person] = create(person)

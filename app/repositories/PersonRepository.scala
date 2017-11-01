@@ -16,6 +16,8 @@ trait PersonRepository[Effect[_]] {
   def create(person: Person): Effect[Person]
 
   def find(personId: UUID): Effect[Option[Person]]
+  
+  def findUser(user_Id: String): Effect[Option[Person]]
 
   def update(person: Person): Effect[Person]
 

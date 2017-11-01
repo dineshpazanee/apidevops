@@ -26,6 +26,7 @@ import com.apidevops.dao.UserRepository
 import models.User
 import models.UserData
 import models.LoginUser
+import models.Person
 import models.UserForm
 import repositories.PersonRepository
 
@@ -35,15 +36,18 @@ import scala.concurrent.{ExecutionContext, Future}
 class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: ControllerComponents) extends AbstractController(cc) {
 
   def index() = Action { implicit request =>
-      var sessionUser = request.session.get("username")
+      var sessionUser = request.session.get("sessionUser")
+      var sessionUuid = request.session.get("sessionUuid")
       if(sessionUser != None){
-        println("-----------> 1 "+sessionUser)
-        var uuidtemp = UUID.fromString("496e05e1-aea0-39c4-a558-00e8a7b9ea28")
-         personRepo.find(uuidtemp)
+        println("-----------> 1 "+sessionUser)         
         Ok(views.html.index())
       }else{
         println("-----------> 2 "+sessionUser)
-        Redirect(routes.HomeController.login)
+        personRepo.find(UUID.fromString("496e05e1-aea0-39c4-a558-00e8a7b9ea28")).map {
+          case None => NotFound
+          case Some(existingPerson) => Ok(views.html.login())
+        }.recover { case _ => ServiceUnavailable }
+        Redirect(routes.HomeController.demo)
       }
   }
   
@@ -51,11 +55,23 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
     Ok(views.html.login())
   }
   
+  def createperson = Action(parse.form(UserForm.loginForm)) { implicit request =>
+    val loginForm = request.body
+    
+    println("-------------------------")
+  /*  val loginUser = models.LoginUser(loginForm.firstName, loginForm.lastName, loginForm.userName, loginForm.userPassword, loginForm.userEmail, loginForm.gender)
+    val person = Person(UUID.nameUUIDFromBytes(loginForm.userName.getBytes()), loginForm.firstName,
+        loginForm.lastName, loginUser.userName, loginUser.userPassword, loginForm.userEmail, loginForm.gender)
+       
+       personRepo.create(person)*/
+      Ok(views.html.login())
+  }
+  
   
   def loginUser() = Action(parse.form(UserForm.loginForm)) { implicit request =>
     val loginForm = request.body
-    val loginUser = models.LoginUser(loginForm.userName, loginForm.userPassword)
-    println(loginUser.userName+" ####### "+loginUser.userPassword)
+ //   val loginUser = models.LoginUser(loginForm.userName, loginForm.userPassword, loginForm.userEmail)
+    println(loginForm.userName+" ####### "+loginForm.userPassword)
       Ok(views.html.login())
   }
   

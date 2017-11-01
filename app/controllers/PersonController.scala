@@ -8,13 +8,26 @@ import models.dtos.{CreatePerson, ErrorCode, ErrorResponse, PersonsResult}
 import play.api.data.validation.ValidationError
 import play.api.libs.json._
 import play.api.mvc._
+import models.UserForm
 import repositories.PersonRepository
 
 import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
-class PersonController @Inject()(personRepo: PersonRepository[Future])(implicit ec: ExecutionContext) extends Controller {
+class PersonController @Inject()(personRepo: PersonRepository[Future])(implicit ec: ExecutionContext) extends Controller{
 
+  
+  
+  def createUser() = Action(parse.form(UserForm.loginForm)) { implicit request =>
+    val loginForm = request.body
+    println("-------------------------")
+    val loginUser = models.LoginUser(loginForm.firstName, loginForm.lastName, loginForm.userName, loginForm.userPassword, loginForm.userEmail, loginForm.gender)
+    val person = Person(UUID.nameUUIDFromBytes(loginForm.userName.getBytes()), loginForm.firstName,
+        loginForm.lastName, loginUser.userName, loginUser.userPassword, loginForm.userEmail, loginForm.gender)
+       
+       personRepo.create(person)
+      Ok(views.html.login())
+  }
 
   def find(id: UUID): Action[AnyContent] = Action.async (
     personRepo.find(id).map {

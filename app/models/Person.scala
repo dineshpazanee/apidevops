@@ -6,7 +6,7 @@ import models.Gender.Gender
 import models.dtos.EnumerationJsonFormat
 import play.api.libs.json.{Format, Json, Writes}
 
-case class Person(id: UUID, firstName: String, lastName: String, studentId: String, gender: Gender)
+case class Person(id: UUID, firstName: String, lastName: String, userId: String, password: String, email: String,  gender:String)
 
 case class Address(id: UUID, city: String, country: String, contactNo: Number)
 

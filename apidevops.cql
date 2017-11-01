@@ -53,6 +53,29 @@ sudo nohup target/universal/stage/bin/play-scala-streaming-example -Dplay.http.s
 
 INSERT INTO  apidevops.user  (id, name, password, host, request) VALUES(now(), 'muruga', 'dinesh', 'host', 'request')
 
+-----------------------------------------------------------------------
+
+persons:
+
+CREATE KEYSPACE apidevopsdb WITH REPLICATION = {
+	'class': 'SimpleStrategy',
+	'replication_factor': 1
+};
+
+
+CREATE TABLE apidevopsdb.person_info (
+	id UUID,
+	gender TEXT,
+	userId TEXT,
+	password TEXT,
+	email TEXT,
+	firstName TEXT,
+	lastName TEXT,
+	PRIMARY KEY (id)
+);
+
+
+
 
 
 
