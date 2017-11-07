@@ -43,9 +43,9 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
         Ok(views.html.index())
       }else{
         println("-----------> 2 "+sessionUser)
-        personRepo.find(UUID.fromString("496e05e1-aea0-39c4-a558-00e8a7b9ea28")).map {
+        personRepo.findUser(sessionUser.toString()).map {
           case None => NotFound
-          case Some(existingPerson) => Ok(views.html.login())
+          case Some(existingPerson) => Ok(views.html.demo())
         }.recover { case _ => ServiceUnavailable }
         Redirect(routes.HomeController.demo)
       }
@@ -55,15 +55,14 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
     Ok(views.html.login())
   }
   
-  def createperson = Action(parse.form(UserForm.loginForm)) { implicit request =>
-    val loginForm = request.body
+  def createperson = Action(parse.form(UserForm.simplePersonForm)) { implicit request =>
+    val simplePersonForm = request.body
     
     println("-------------------------")
-  /*  val loginUser = models.LoginUser(loginForm.firstName, loginForm.lastName, loginForm.userName, loginForm.userPassword, loginForm.userEmail, loginForm.gender)
-    val person = Person(UUID.nameUUIDFromBytes(loginForm.userName.getBytes()), loginForm.firstName,
-        loginForm.lastName, loginUser.userName, loginUser.userPassword, loginForm.userEmail, loginForm.gender)
+    val simplePerson = Person(UUID.nameUUIDFromBytes(simplePersonForm.userId.getBytes()), "",
+        "", simplePersonForm.userId, simplePersonForm.password, simplePersonForm.email, "")
        
-       personRepo.create(person)*/
+       personRepo.create(simplePerson)
       Ok(views.html.login())
   }
   

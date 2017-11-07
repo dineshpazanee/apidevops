@@ -26,6 +26,7 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
 
   object id extends UUIDColumn(this) with PartitionKey
 
+  //object firstName extends StringColumn(this) 
   object firstName extends StringColumn(this) {
     override def name: String = "firstName"
   }
@@ -52,6 +53,13 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
  // object gender extends EnumColumn[Gender.Value](this)
 
   override implicit val monad: Monad[Future] = cats.instances.future.catsStdInstancesForFuture
+  
+/*  override def create(person: Person): Future[Person]  = {
+  store(person)
+    .consistencyLevel_=(ConsistencyLevel.ALL)
+    .future()
+    .map(_ => person)
+}*/
 
   override def create(person: Person): Future[Person] =
     insert.value(_.id, person.id)

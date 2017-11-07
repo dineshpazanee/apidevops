@@ -21,11 +21,11 @@ class PersonController @Inject()(personRepo: PersonRepository[Future])(implicit 
   def createUser() = Action(parse.form(UserForm.loginForm)) { implicit request =>
     val loginForm = request.body
     println("-------------------------")
-    val loginUser = models.LoginUser(loginForm.firstName, loginForm.lastName, loginForm.userName, loginForm.userPassword, loginForm.userEmail, loginForm.gender)
+    /*val loginUser = models.LoginUser(loginForm.firstName, loginForm.lastName, loginForm.userName, loginForm.userPassword, loginForm.userEmail, loginForm.gender)
     val person = Person(UUID.nameUUIDFromBytes(loginForm.userName.getBytes()), loginForm.firstName,
         loginForm.lastName, loginUser.userName, loginUser.userPassword, loginForm.userEmail, loginForm.gender)
        
-       personRepo.create(person)
+       personRepo.create(person)*/
       Ok(views.html.login())
   }
 
