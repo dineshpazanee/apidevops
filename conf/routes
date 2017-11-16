@@ -12,7 +12,7 @@ GET        /scala/comet/liveClock              controllers.ScalaCometController.
 GET        /scala/eventSource                  controllers.ScalaEventSourceController.index()
 GET        /scala/eventSource/liveClock        controllers.ScalaEventSourceController.streamClock()
 
-GET        /login					       		controllers.HomeController.login()
+GET        /login					       		controllers.HomeController.login
 
 POST        /loginuser					       	controllers.HomeController.loginUser()
 
@@ -28,7 +28,7 @@ GET        /user					       		controllers.HomeController.user()
 
 GET        /demo					       		controllers.HomeController.demo()
 
-GET        /register					       		controllers.HomeController.register()
+GET        /register					       		controllers.HomeController.register
 
 POST    /userPost					       		controllers.HomeController.userPost()
 

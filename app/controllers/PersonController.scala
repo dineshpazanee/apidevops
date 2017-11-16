@@ -26,7 +26,7 @@ class PersonController @Inject()(personRepo: PersonRepository[Future])(implicit 
         loginForm.lastName, loginUser.userName, loginUser.userPassword, loginForm.userEmail, loginForm.gender)
        
        personRepo.create(person)*/
-      Ok(views.html.login())
+      Ok(views.html.login.render(Some("Invalid username and Password!")))
   }
 
   def find(id: UUID): Action[AnyContent] = Action.async (

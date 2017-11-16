@@ -12,7 +12,9 @@ class UserForm {
 
 case class LoginUser(firstName: String, lastName: String, userName: String,  userPassword: String, userEmail: String, gender: String)
 
-case class SimplePerson(userId: String, password: String, email: String)
+case class SimplePerson(userId: String,  email: String, password: String)
+
+case class LoginPerson(userName: String, password: String)
 
 object UserForm{
   
@@ -28,9 +30,17 @@ object UserForm{
   
   val simplePersonForm = Form(
   mapping(
-    "userId" -> text,
-    "password" -> text,
-    "email" -> text
+    "userId" -> text,    
+    "email" -> text,
+    "password" -> text
   )(SimplePerson.apply)(SimplePerson.unapply))
+  
+  val loginPerson = Form(
+  mapping(
+    "userName" -> text,   
+    "password" -> text
+  )(LoginPerson.apply)(LoginPerson.unapply))
+  
+  
   
 }

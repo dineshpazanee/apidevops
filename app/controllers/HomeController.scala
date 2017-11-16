@@ -9,6 +9,11 @@ import play.api.mvc._
 import play.api.libs.json._
 import play.api.libs.json.Reads._
 import play.api.libs.functional.syntax._
+import scala.language.higherKinds
+import scala.concurrent.{ExecutionContext, Future}
+import scala.util.{Success, Failure}
+import scala.concurrent.Await
+import scala.concurrent.duration._
 
 import play.api.data._
 import play.api.data.Forms._
@@ -28,13 +33,15 @@ import models.UserData
 import models.LoginUser
 import models.Person
 import models.UserForm
+import models._
 import repositories.PersonRepository
 
 import scala.concurrent.{ExecutionContext, Future}
 
-
 class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: ControllerComponents) extends AbstractController(cc) {
 
+  var simplePerson = new SimplePerson("dinesh", "dinesh@gmail.com", "12345")
+  
   def index() = Action { implicit request =>
       var sessionUser = request.session.get("sessionUser")
       var sessionUuid = request.session.get("sessionUuid")
@@ -52,7 +59,7 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
   }
   
   def login() = Action {
-    Ok(views.html.login())
+    Ok(views.html.login.render(None))
   }
   
   def createperson = Action(parse.form(UserForm.simplePersonForm)) { implicit request =>
@@ -63,24 +70,37 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
         "", simplePersonForm.userId, simplePersonForm.password, simplePersonForm.email, "")
        
        personRepo.create(simplePerson)
-      Ok(views.html.login())
+      Ok(views.html.login.render(None))
   }
   
   
-  def loginUser() = Action(parse.form(UserForm.loginForm)) { implicit request =>
-    val loginForm = request.body
- //   val loginUser = models.LoginUser(loginForm.userName, loginForm.userPassword, loginForm.userEmail)
-    println(loginForm.userName+" ####### "+loginForm.userPassword)
-      Ok(views.html.login())
+  def loginUser() = Action(parse.form(UserForm.loginPerson)) { implicit request =>
+    val loginPersonValue = request.body    
+    var loggedUserInfo = Await.result(personRepo.findUser(loginPersonValue.userName), 10 seconds)
+    
+    loggedUserInfo.map{f =>    
+      
+        if((loginPersonValue.userName.equals(f.userId)) &&
+            (loginPersonValue.password.equals(f.password)))
+           Redirect(routes.HomeController.demo())
+        else
+           Ok(views.html.login.render(Some("Invalid Username and Password.")))
+              
+      }.getOrElse{Ok(views.html.login.render(Some("Not a valid user. Please signup.")))}
+    }
+  
+  def notValidUser = Action {
+    Ok(views.html.login.render(Some("Not a valid user! Please signup")))
   }
   
+  def invalidValidUser = Action {
+    Ok(views.html.login.render(Some("Invalid username and Password!")))
+  } 
   
   
   def user() = Action {
     Ok(views.html.user())
-  }
-  
-  
+  } 
   
   
   def demo() = Action {
@@ -89,7 +109,7 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
   
   
   def register() = Action {
-    Ok(views.html.register())
+    Ok(views.html.register.render(simplePerson))
   }
   
   
