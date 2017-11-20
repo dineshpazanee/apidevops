@@ -25,9 +25,11 @@ CREATE TABLE IF NOT EXISTS apidevops.user (
   "isactive": "true"
 }
      
+sbt clean stage     
         
-nohup target/universal/stage/bin/apidevops -Dplay.http.secret.key=pazani -Dhttp.port=80 &
+sudo nohup target/universal/stage/bin/apidevops -Dplay.http.secret.key=pazani -Dhttp.port=80 &
 
+sudo netstat -nlp | grep :80
 
 sudo nohup target/universal/stage/bin/play-scala-streaming-example -Dplay.http.secret.key=pazani -Dhttp.port=80 &
         
@@ -73,6 +75,11 @@ CREATE TABLE apidevopsdb.person_info (
 	lastName TEXT,
 	PRIMARY KEY (id)
 );
+
+CREATE INDEX userId_person_info ON person_info (userId);
+CREATE INDEX email_person_info ON person_info (email);
+
+
 
 
 

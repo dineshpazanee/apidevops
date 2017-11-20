@@ -45,11 +45,20 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
   def index() = Action { implicit request =>
       var sessionUser = request.session.get("sessionUser")
       var sessionUuid = request.session.get("sessionUuid")
+      println("!!!!!!!!!!!! "+request.session.isEmpty)
+      
+      request.session.get("sessionUser").map{f =>
+        println("111111111111111 "+f)
+      }.getOrElse{
+        println("222222222222222 ")
+      }
+      
+      
       if(sessionUser != None){
-        println("-----------> 1 "+sessionUser)         
+        println(sessionUuid+"-----------> 1 "+sessionUser)         
         Ok(views.html.index())
       }else{
-        println("-----------> 2 "+sessionUser)
+        println(sessionUuid+"-----------> 2 "+sessionUser)
         personRepo.findUser(sessionUser.toString()).map {
           case None => NotFound
           case Some(existingPerson) => Ok(views.html.demo())
@@ -78,14 +87,21 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
     val loginPersonValue = request.body    
     var loggedUserInfo = Await.result(personRepo.findUser(loginPersonValue.userName), 10 seconds)
     
-    loggedUserInfo.map{f =>    
+    loggedUserInfo.map{f =>   
       
         if((loginPersonValue.userName.equals(f.userId)) &&
-            (loginPersonValue.password.equals(f.password)))
-           Redirect(routes.HomeController.demo())
-        else
+            (loginPersonValue.password.equals(f.password))){
+          println("33333333333 ")
+          
+          request.session + ("sessionUser" -> f.userId)
+          request.session + ("sessionUuid" -> f.id.toString())
+          request.session + ("sessionEmail" -> f.email)
+          
+           Ok(views.html.index()).withSession(request.session + ("sessionUser" -> f.userId)+ ("sessionUuid" -> f.id.toString()))
+        }else{
+           println("44444444444 ")
            Ok(views.html.login.render(Some("Invalid Username and Password.")))
-              
+        }
       }.getOrElse{Ok(views.html.login.render(Some("Not a valid user. Please signup.")))}
     }
   
