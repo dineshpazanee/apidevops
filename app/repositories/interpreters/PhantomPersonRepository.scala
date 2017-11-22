@@ -21,7 +21,7 @@ class PhantomPersonRepository @Inject()(config: Configuration, connection: Cassa
   // See https://github.com/outworkers/phantom/wiki/Using-the-Database-class-and-understanding-connectors
   implicit val session: Session = connection.session
   implicit val keySpace: KeySpace = connection.provider.space
-  override val tableName: String = config.getString("db.table").getOrElse("person_info")
+  override val tableName: String = config.getString("db.table.person").getOrElse("person_info")
   implicit val executionContext: ExecutionContext = ec
 
   object id extends UUIDColumn(this) with PartitionKey

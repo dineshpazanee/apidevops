@@ -7,7 +7,7 @@ import models.Person
 
 import scala.language.higherKinds
 
-case class Page[A](result: A, next: Option[String])
+case class Page[A](result: A, next: Option[String]) 
 
 trait PersonRepository[Effect[_]] {
   

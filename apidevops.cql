@@ -79,6 +79,30 @@ CREATE TABLE apidevopsdb.person_info (
 CREATE INDEX userId_person_info ON person_info (userId);
 CREATE INDEX email_person_info ON person_info (email);
 
+CREATE TABLE apidevopsdb.MainMenu (
+	id UUID,
+	menuname TEXT,
+	link TEXT,
+	cssname TEXT,
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE apidevopsdb.SecondaryMenu (
+	id UUID,
+	menuname TEXT,
+	link TEXT,
+	cssname TEXT,
+	mainmenuid UUID,
+	PRIMARY KEY (id)
+);
+
+insert into MainMenu(id, menuname, link, cssname) values(uuid(), 'dashboar', 'index.html', 'css');
+
+insert into SecondaryMenu(id, menuname, link, cssname, mainmenuid) values(uuid(), 'dashboar', 'index.html', 'css', f26eb94c-c043-47d0-af86-a0770d42c9f6);
+insert into SecondaryMenu(id, menuname, link, cssname, mainmenuid) values(uuid(), 'dashboar', 'index.html', 'css', f26eb94c-c043-47d0-af86-a0770d42c9f6);
+insert into SecondaryMenu(id, menuname, link, cssname, mainmenuid) values(uuid(), 'dashboar', 'index.html', 'css', f26eb94c-c043-47d0-af86-a0770d42c9f6);
+
+
 
 
 

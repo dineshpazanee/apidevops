@@ -34,11 +34,11 @@ import models.LoginUser
 import models.Person
 import models.UserForm
 import models._
-import repositories.PersonRepository
+import repositories.{PersonRepository, MenuRepository}
 
 import scala.concurrent.{ExecutionContext, Future}
 
-class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: ControllerComponents) extends AbstractController(cc) {
+class HomeController @Inject()(personRepo: PersonRepository[Future], menuRepo: MenuRepository[Future])(cc: ControllerComponents) extends AbstractController(cc) {
 
   var simplePerson = new SimplePerson("dinesh", "dinesh@gmail.com", "12345")
   
@@ -46,6 +46,14 @@ class HomeController @Inject()(personRepo: PersonRepository[Future])(cc: Control
       var sessionUser = request.session.get("sessionUser")
       var sessionUuid = request.session.get("sessionUuid")
       println("!!!!!!!!!!!! "+request.session.isEmpty)
+      
+      var menuInfo = Await.result(menuRepo.find( UUID.fromString("f26eb94c-c043-47d0-af86-a0770d42c9f6")), 10 seconds)
+      
+      println("SSSSSSSSSSSS "+menuInfo.size)
+      
+      menuInfo.map(f =>
+        println("ccccccccccccccc "+f.cssname))
+      
       
       request.session.get("sessionUser").map{f =>
         println("111111111111111 "+f)
